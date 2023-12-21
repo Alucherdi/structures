@@ -63,7 +63,8 @@ remove_at(list* l, int el) {
     else
     {
         node* prev = l->last;
-        for (int i = 0; i < el - 1; i++) {
+        for (int i = 0; i < el - 1; i++)
+        {
             prev = prev->next;
         }
         node* removing = prev->next;
