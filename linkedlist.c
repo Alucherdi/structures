@@ -5,7 +5,6 @@ typedef struct node
 {
     int value;
     struct node* next;
-    struct node* last;
 } node;
 
 typedef struct list
@@ -47,11 +46,10 @@ for_each(list* l, void(*f)(int))
 }
 
 int
-remove_at(list* l, int el) {
+remove_at(list* l, int el)
+{
     if (el >= l->size || el < 0)
-    {
         return 1;
-    }
 
     if (el == l->size - 1)
     {
@@ -64,9 +62,8 @@ remove_at(list* l, int el) {
     {
         node* prev = l->last;
         for (int i = 0; i < el - 1; i++)
-        {
             prev = prev->next;
-        }
+
         node* removing = prev->next;
         prev->next = removing->next;
         free(removing);
